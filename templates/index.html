@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main">
+    <div class="header">
+        <h1>Detection Hub</h1>
+    </div>
+    <div class="buttons">
+        <a class="btn-custom" href="{{ url_for('detect') }}">
+            <svg class="icon">
+                <use xlink:href="../static/sprite.svg#icon-search"></use>
+            </svg>
+            <span>Detect</span>
+        </a>
+        <a class="btn-custom" href="{{ url_for('accuracy') }}">
+            <svg class="icon">
+                <use xlink:href="../static/sprite.svg#icon-scope"></use>
+            </svg>
+            <span>Accuracy</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

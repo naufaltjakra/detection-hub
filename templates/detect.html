@@ -2,134 +2,146 @@
 
 {% block content %}
 
-    <form class="form" action="{{ url_for('result') }}" method="POST">
-        <h1 class="header">Detect Phishing Website</h1>
-        <div class="container">
+<form class="form" action="{{ url_for('result') }}" method="POST">
+    <h1 class="header">Form Deteksi Website Phishing</h1>
+    <div class="container">
+        <!-- <div class="grid"> -->
             <div class="item item--1">
-                <p>Does The URL have IP Address?</p>
+                <p>Pada URL terdapat IP address :</p>
                 <div class="radio ">
-                    <input type="radio" name="ip" value="1">Yes<br>
-                    <input type="radio" name="ip" value="-1" checked>No<br>
+                    <input type="radio" name="ip" value="1">Ya<br>
+                    <input type="radio" name="ip" value="2" checked>Tidak<br>
                 </div>
             </div>
             <div class="item item--2">
-                <p>URL Length</p>
+                <p>Panjang URL :</p>
                 <div class="radio">
-                    <input type="radio" name="ul" value="1" checked>&lt 54 Character<br>
-                    <input type="radio" name="ul" value="0">54 - 75 Character<br>
-                    <input type="radio" name="ul" value="-1">&gt 75 Character<br>
+                    <input type="radio" name="ul" value="1" checked>&lt 54 Karakter<br>
+                    <input type="radio" name="ul" value="0">54 - 75 Karakter<br>
+                    <input type="radio" name="ul" value="2">&gt 75 Karakter<br>
                 </div>
             </div>
             <div class="item item--3">
-                <p>Does the URL have '@' symbol?</p>
+                <p>Apakah terdapat simbol '@' pada URL ?</p>
                 <div class="radio-center">
-                    <input type="radio" name="at" value="-1">Yes<br>
-                    <input type="radio" name="at" value="1" checked>No<br>
+                    <input type="radio" name="at" value="2">Ya<br>
+                    <input type="radio" name="at" value="1" checked>Tidak<br>
                 </div>
             </div>
             <div class="item item--4">
-                <p>Does The URL have Prefix Suffix '-' Symbol?</p>
+                <p>Apakah URL memiliki prefix atau suffix seperti '-' ?</p>
                 <div class="radio-center">
-                    <input type="radio" name="ps" value="-1">Yes<br>
-                    <input type="radio" name="ps" value="1" checked>No<br>
+                    <input type="radio" name="ps" value="2">Ya<br>
+                    <input type="radio" name="ps" value="1" checked>Tidak<br>
                 </div>
             </div>
+        <!-- </div> -->
+
+        <!-- <div class="grid"> -->
             <div class="item item--5">
-                <p>How many dot-segments is in the domain?</p>
+                <p>Seberapa banyak <i>dot-segments</i> pada domain ?</p>
                 <div class="radio-center">
                     <input type="radio" name="sd" value="1">1 - 2<br>
                     <input type="radio" name="sd" value="0">3<br>
-                    <input type="radio" name="sd" value="-1" checked>&gt 3<br>
+                    <input type="radio" name="sd" value="2" checked>&gt 3<br>
                 </div>
             </div>
             <div class="item item--6">
-                <p>Does The URL have Https token?</p>
+                <p>Apakah URL memiliki token https ?</p>
                 <div class="radio-center">
-                    <input type="radio" name="ht" value="1">Yes<br>
-                    <input type="radio" name="ht" value="-1" checked>No<br>
+                    <input type="radio" name="ht" value="1">Ya<br>
+                    <input type="radio" name="ht" value="2" checked>Tidak<br>
                 </div>
             </div>
             <div class="item item--7">
-                <p>What percentage request from another Domain?</p>
+                <p>Seberapa besar persentase request dari domain lain ?</p>
                 <div class="radio-center">
                     <input type="radio" name="ru" value="1">&lt 22%<br>
-                    <input type="radio" name="ru" value="-1" checked>&gt 22%<br>
+                    <input type="radio" name="ru" value="2" checked>&gt 22%<br>
                 </div>
             </div>
             <div class="item item--8">
-                <p>What percentage of Anchor URL in the website point to different domain?</p>
+                <p>Persentase Anchor URL yang menuju domain lain :</p>
                 <div class="radio">
                     <input type="radio" name="ua" value="1">&lt 31%<br>
                     <input type="radio" name="ua" value="0">31% - 67%<br>
-                    <input type="radio" name="ua" value="-1" checked>&gt 67%<br>
+                    <input type="radio" name="ua" value="2" checked>&gt 67%<br>
                 </div>
             </div>
+        <!-- </div> -->
+
+        <!-- <div class="grid"> -->
             <div class="item item--9">
-                <p>Server Form Handler</p>
+                <p>Server Form Handler menuju kemana ?</p>
                 <div class="radio">
-                    <input type="radio" name="sfh" value="1">Same Domain<br>
-                    <input type="radio" name="sfh" value="0">Redirect to different Domain<br>
-                    <input type="radio" name="sfh" value="-1" checked>Empty or Blank<br>
+                    <input type="radio" name="sfh" value="1">Ke domain yang sama<br>
+                    <input type="radio" name="sfh" value="0">Ke domain lain<br>
+                    <input type="radio" name="sfh" value="2" checked>Kosong<br>
                 </div>
             </div>
             <div class="item item--10">
-                <p>Abnormal URL</p>
+                <p>Apakah website termasuk dalam database WHOIS ?</p>
                 <div class="radio">
-                    <input type="radio" name="ab" value="-1">No record in WHOIS database<br>
-                    <input type="radio" name="ab" value="1" checked>Record in WHOIS exist<br>
+                    <input type="radio" name="ab" value="2">Tidak<br>
+                    <input type="radio" name="ab" value="1" checked>Ada<br>
                 </div>
             </div>
             <div class="item item--11">
-                <p>How many times the website redirect?</p>
+                <p>Berapa kali website melakuakan <i>redirect</i> ?</p>
                 <div class="radio-center">
                     <input type="radio" name="re" value="0">&gt 2<br>
                     <input type="radio" name="re" value="1" checked>&lt 2<br>
                 </div>
             </div>
             <div class="item item--12">
-                <p>URL on MouseOver</p>
+                <p>URL saat <i>mouse over</i>> :</p>
                 <div class="radio">
-                    <input type="radio" name="mo" value="-1">URL Changes<br>
-                    <input type="radio" name="mo" value="1" checked>URL Doesn't Change<br>
+                    <input type="radio" name="mo" value="2">URL berubah<br>
+                    <input type="radio" name="mo" value="1" checked>URL tidak berubah<br>
                 </div>
             </div>
+        <!-- </div> -->
+
+        <!-- <div class="grid"> -->
             <div class="item item--13">
-                <p>Does the Website use forms in Pop Up Window?</p>
+                <p>Apakah form website dalam bentuk <i>pop up</i> ?</p>
                 <div class="radio-center">
-                    <input type="radio" name="po" value="-1">Yes<br>
-                    <input type="radio" name="po" value="1" checked>No<br>
+                    <input type="radio" name="po" value="2">Ya<br>
+                    <input type="radio" name="po" value="1" checked>Tidak<br>
                 </div>
             </div>
             <div class="item item--14">
-                <p>Website Domain Age</p>
+                <p>Umur domain website :</p>
                 <div class="radio-center">
-                    <input type="radio" name="ad" value="-1">&lt 6 Month<br>
-                    <input type="radio" name="ad" value="1" checked>&gt 6 Month<br>
+                    <input type="radio" name="ad" value="2">&lt 6 Bulan<br>
+                    <input type="radio" name="ad" value="1" checked>&gt 6 Bulan<br>
                 </div>
             </div>
             <div class="item item--15">
-                <p>Any DNS record on the website?</p>
+                <p>Apakah website mempunyai DNS record ?</p>
                 <div class="radio-center">
-                    <input type="radio" name="dns" value="-1">No<br>
-                    <input type="radio" name="dns" value="1" checked>Yes<br>
+                    <input type="radio" name="dns" value="2">Tidak<br>
+                    <input type="radio" name="dns" value="1" checked>Ya<br>
                 </div>
             </div>
             <div class="item item--16">
-                <p>Website Traffic</p>
+                <p>Traffic website :</p>
                 <div class="radio">
-                    <input type="radio" name="wt" value="-1">No traffic and website rank &gt 500.000<br>
-                    <input type="radio" name="wt" value="0">Website Rank 100.000 - 500.000<br>
-                    <input type="radio" name="wt" value="1" checked>Website Rank &lt 100.000<br>
+                    <input type="radio" name="wt" value="2">No traffic dan ranking website &gt 500.000<br>
+                    <input type="radio" name="wt" value="0">Ranking website 100.000 - 500.000<br>
+                    <input type="radio" name="wt" value="1" checked>Rangking website &lt 100.000<br>
                 </div>
             </div>
-        </div>
-        <div class="detect">
-            <input class="btn" type="submit" value="Detect">
-        </div>
+        <!-- </div> -->
 
-        <a class="btn-back" href="{{ url_for('home') }}">
-            <span> &larr; Back</span>
-        </a>
-    </form>
+    </div>
+    <div class="detect">
+        <input class="btn" type="submit" value="Detect">
+    </div>
+
+    <a class="btn-back" href="{{ url_for('home') }}">
+        <span> &larr; Back</span>
+    </a>
+</form>
 
 {% endblock %}

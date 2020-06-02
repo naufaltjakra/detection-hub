@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
-from Algorithms import rf_mean_acc, nn_mean_acc, nb_mean_acc
-import pickle
+from markupsafe import Markup
+from random_forest_test import acc
+
 import numpy as np
 import os
-from markupsafe import Markup
+import pickle
 
 app = Flask(__name__)
 
@@ -21,14 +22,18 @@ def dated_url_for(endpoint, **values):
             values['q'] = int(os.stat(file_path).st_mtime)
     return url_for(endpoint, **values)
 
-# Load model
+# load model
 model_RF = pickle.load(open('model_RF.pkl','rb'))
-model_NN = pickle.load(open('model_NN.pkl','rb'))
-model_NB = pickle.load(open('model_NB.pkl','rb'))
 
 @app.route("/")
+@app.route("/homepage")
+@app.route("/home")
 def home():
     return render_template('index.html')
+
+@app.route("/information")
+def information():
+    return render_template('information.html', acc=acc)
 
 @app.route("/detect")
 def detect():
@@ -38,16 +43,15 @@ def detect():
 def result():
     int_features = [int(x) for x in  request.form.values()]
     final = [np.array(int_features)]
-    prediction = model_RF.predict(final)
+    predict = model_RF.prediction(final)
     print(int_features)
     print(final)
-    print(prediction)
+    print(predict)
     
-    if prediction == 1:
-        return render_template('result.html', pred='Safe')
+    if predict == 1:
+        return render_template('result.html', pred='Aman')
     return render_template('result.html', pred='Phishing')
 
-
-@app.route("/accuracy")
-def accuracy():
-    return render_template('accuracy.html', nn_mean_acc=nn_mean_acc, rf_mean_acc=rf_mean_acc, nb_mean_acc=nb_mean_acc)
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html")

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="style.css") }}">
+    <title>Information</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="info">
+                <div class="info-box">
+                    <p class="info-header">Informasi</p>
+                    <p class="info-detail">Website ini bertujuan untuk mendeteksi website phishing
+                        dengan masukan berupa form karakteristik website phishing. Setelah semua data
+                        form diisi dan menekan tombol submit, akan ditentukan apakah website tersebut
+                        aman atau berpotensi phishing. Website ini menggunakan Random Forest sebagai
+                        algoritma klasifikasi. <a class="dataset-link" target="_blank" href="https://archive.ics.uci.edu/ml/datasets/Phishing+Websites">Data</a> yang digunakan untuk pelatihan dan pengujian pada
+                        website ini didapatkan dari UCI Machine Learning Repository.
+                    </p>
+                    <p class="info-detail">
+                        Model yang digunakan sebagai acuan pengujian klasifikasi berisi 512 pohon dengan
+                        masing-masing memiliki kedalaman 2 sampai 6 tingkat.
+                    </p>
+                </div>
+
+                <p class="info-header">Akurasi</p>
+
+                <span class="acc-num">{{acc}}%</span>
+
+                <a class="btn-back back-acc" href="{{ url_for('home') }}">
+                    <span>Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

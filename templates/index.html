@@ -3,21 +3,21 @@
 {% block content %}
 
 <div class="main">
-    <div class="header">
-        <h1>Detection Hub</h1>
+    <div class="header header-big">
+        <h1>Klasifikasi Website Phishing</h1>
     </div>
     <div class="buttons">
         <a class="btn-custom" href="{{ url_for('detect') }}">
             <svg class="icon">
-                <use xlink:href="../static/sprite.svg#icon-search"></use>
+                <use xlink:href="../static/symbol-defs.svg#icon-search"></use>
             </svg>
-            <span>Detect</span>
+            <span>Deteksi</span>
         </a>
-        <a class="btn-custom" href="{{ url_for('accuracy') }}">
+        <a class="btn-custom" href="{{ url_for('information') }}">
             <svg class="icon">
-                <use xlink:href="../static/sprite.svg#icon-scope"></use>
+                <use xlink:href="../static/symbol-defs.svg#icon-book"></use>
             </svg>
-            <span>Accuracy</span>
+            <span>Informasi</span>
         </a>
     </div>
 </div>

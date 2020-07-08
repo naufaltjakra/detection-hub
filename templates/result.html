@@ -10,14 +10,14 @@
 
 <body>
     <div class="result">
-        <p>This website is most likely</p>
+        <p>Berdasarkan data yang diberikan, website ini :</p>
 
-        {% if pred == 'Safe' %}
+        {% if pred == 'Aman' %}
             <p class="result-legit">{{pred}}</p>
         {% else %}
             <p class="result-phishing">{{pred}}</p>
         {% endif %}
-
+        
         <a class="btn-back" href="{{ url_for('detect') }}">
             <span> &larr; Back</span>
         </a>

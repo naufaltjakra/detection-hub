@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="style.css") }}">
-    <title>Accuracy</title>
+    <title>Result</title>
 </head>
 
 <body>
-    <div class="accuracy">
-        <p class="accuracy_text">Random Forest Mean Accuracy : <span class="white">{{rf_mean_acc}}</span></p>
-        <p class="accuracy_text">Neural Network Mean Accuracy : <span class="white">{{nn_mean_acc}}</span></p>
-        <p class="accuracy_text">Naive Bayes Mean Accuracy : <span class="white">{{nb_mean_acc}}</span></p>
-
+    <div class="main">
+        <div class="error">
+            <p class="error-header">404</p>
+            <p class="error-text">Page Not Found</p>
+            <p class="error-description">Maaf halaman url yang dituju belum ada pada website ini.</p>
+            
+        </div>
         <a class="btn-back back-acc" href="{{ url_for('home') }}">
             <span>Home</span>
         </a>

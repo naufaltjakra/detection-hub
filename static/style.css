@@ -1,7 +1,11 @@
 body {
-  background-color: #f6eedf;
+  /* background-color: #f6eedf; */
   font-family: "Open Sans", sans-serif;
   font-size: 14.5px;
+  background-image: linear-gradient(to top, #f6eedf, #e2ceac);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 98.5vh;
 }
 @media only screen and (max-width: 1635px) {
   body {
@@ -11,8 +15,12 @@ body {
 
 .header {
   color: #41658a;
-  margin-bottom: 44px;
+  margin-bottom: 20px;
   text-transform: uppercase;
+}
+
+.header-big {
+  font-size: 22px;
 }
 
 .main {
@@ -60,8 +68,8 @@ body {
 }
 
 .icon {
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   margin-bottom: 15px;
 }
 
@@ -74,11 +82,17 @@ body {
   grid-template-rows: repeat(1, 40px);
 }
 
+/* .grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
 .btn {
   background-color: #41658a;
   color: #ffffff;
   border: none;
-  border-radius: 100px;
+  border-radius: 8px;
   outline: none;
   font-size: x-large;
   font-family: "Open Sans", sans-serif;
@@ -99,7 +113,7 @@ body {
   background-color: #7c9dbe;
   color: #ffffff;
   border: none;
-  border-radius: 100px;
+  border-radius: 8px;
   outline: none;
   text-decoration: none;
   text-align: center;
@@ -109,7 +123,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.4s;
-  width: 100px;
+  width: 120px;
   height: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   margin-bottom: 10px;
@@ -207,7 +221,19 @@ p {
   color: #ff7272;
 }
 
-.accuracy {
+.card {
+  height: 62vh;
+  width: 98vh;
+  border-radius: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.info {
   height: 80vh;
   font-size: 30px;
 
@@ -218,15 +244,49 @@ p {
   margin-bottom: 100px;
 }
 
-.accuracy_text {
+.info-box {
+  padding: 15px 65px;
+  margin-top: 50px;
+}
+
+.info-header {
   margin-bottom: -10px;
+  font-size: 32px;
   color: #5f6769;
 }
 
-.white {
+.info-detail {
+  font-size: 16px;
+  font-weight: 100;
+  margin-top: 27px;
+  text-align: left;
+  text-indent: 1cm;
+  line-height: 1.6;
+}
+
+.acc-num {
+  margin-top: 10px;
+  font-size: 50px;
   color: #3c4245;
 }
 
 .back-acc {
-  margin-top: 40px;
+  margin-top: 22px;
+}
+
+.dataset-link {
+  text-decoration: none;
+  color: #37516b;
+  font-weight: 500;
+}
+
+/* Error Page */
+.error-header {
+  font-size: 80px;
+  margin-bottom: -40px;
+  font-family: monospace;
+}
+
+.error-text {
+  font-size: 25px;
 }

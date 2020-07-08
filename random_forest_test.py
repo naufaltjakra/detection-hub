@@ -27,11 +27,7 @@ y = data[:, n_features]
 start_time = time.time()
 
 from sklearn.model_selection import train_test_split
-<<<<<<< HEAD
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=3)
-=======
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=None)
->>>>>>> f498513dfc26c3ff6bb618c9c7b6884e74e6c4ea
 
 classifier = RandomForest(n_trees=21, max_depth=6)
 # classifier = RandomForest(n_trees=12, max_depth=6)

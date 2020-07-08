@@ -222,8 +222,13 @@ p {
 }
 
 .card {
+<<<<<<< HEAD
   height: 62vh;
   width: 98vh;
+=======
+  height: 55vh;
+  width: 88vh;
+>>>>>>> f498513dfc26c3ff6bb618c9c7b6884e74e6c4ea
   border-radius: 20px;
   background-color: #fff;
   display: flex;
@@ -251,17 +256,28 @@ p {
 
 .info-header {
   margin-bottom: -10px;
+<<<<<<< HEAD
   font-size: 32px;
+=======
+  font-size: 25px;
+>>>>>>> f498513dfc26c3ff6bb618c9c7b6884e74e6c4ea
   color: #5f6769;
 }
 
 .info-detail {
+<<<<<<< HEAD
   font-size: 16px;
   font-weight: 100;
   margin-top: 27px;
   text-align: left;
   text-indent: 1cm;
   line-height: 1.6;
+=======
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 27px;
+  text-align: left;
+>>>>>>> f498513dfc26c3ff6bb618c9c7b6884e74e6c4ea
 }
 
 .acc-num {
